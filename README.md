@@ -1,0 +1,2 @@
+# MVPFramework
+当activity旋转能保持presenter不被销毁
