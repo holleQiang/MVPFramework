@@ -1,11 +1,13 @@
 package com.zhangqiang.mvp;
 
+import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-public class Presenter<V extends IView> {
+public class Presenter<V extends IView> extends BackgroundPresenter {
 
     private V mAttachedView;
+    private boolean cleared;
 
     @Nullable
     public V getAttachedView() {
@@ -36,5 +38,16 @@ public class Presenter<V extends IView> {
 
     protected void onViewDetached(@NonNull V view) {
 
+    }
+
+    @CallSuper
+    @Override
+    protected void onClear() {
+        super.onClear();
+        cleared = true;
+    }
+
+    public boolean isCleared() {
+        return cleared;
     }
 }

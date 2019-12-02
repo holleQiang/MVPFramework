@@ -1,5 +1,7 @@
 package com.zhangqiang.mvp;
 
+import com.zhangqiang.lifecycle.MLifecycle;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
@@ -7,12 +9,12 @@ public class PresenterProvider {
 
     private final PresenterStore mPresenterStore;
 
-    public PresenterProvider(PresenterStore presenterStore) {
+    PresenterProvider(PresenterStore presenterStore) {
         this.mPresenterStore = presenterStore;
     }
 
-    public <P extends Presenter> P get(Class<P> pClass) {
-        return get(getPresenterStoreKey(pClass), pClass, new Factory<P>() {
+    public <P extends BackgroundPresenter> P get(Class<P> pClass) {
+        return get(getPresenterKey(pClass), pClass, new Factory<P>() {
             @Override
             public P create(Class<? extends P> pClass) {
                 try {
@@ -33,12 +35,12 @@ public class PresenterProvider {
         });
     }
 
-    public <P extends Presenter> P get(String key, Class<P> pClass, Factory< P> mFactory) {
+    public <P extends BackgroundPresenter> P get(String key, Class<P> pClass, Factory<P> mFactory) {
 
         P target;
-        Presenter presenter = mPresenterStore.get(key);
-        if (pClass.isInstance(presenter)) {
-            target = (P) presenter;
+        BackgroundPresenter backgroundPresenter = mPresenterStore.get(key);
+        if (pClass.isInstance(backgroundPresenter)) {
+            target = (P) backgroundPresenter;
         } else {
             target = mFactory.create(pClass);
             if (target != null) {
@@ -48,12 +50,12 @@ public class PresenterProvider {
         return target;
     }
 
-    public interface Factory<P extends Presenter> {
+    public interface Factory<P extends BackgroundPresenter> {
 
         P create(Class<? extends P> pClass);
     }
 
-    private static String getPresenterStoreKey(Class<? extends Presenter> presenterClass) {
+    private static String getPresenterKey(Class<? extends BackgroundPresenter> presenterClass) {
         String canonicalName = presenterClass.getCanonicalName();
         if (canonicalName == null) {
             throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
@@ -62,4 +64,50 @@ public class PresenterProvider {
     }
 
 
+    @SuppressWarnings("unchecked")
+    public <V extends IView, P extends Presenter> P get(Class<P> pClass, final V view) {
+
+        final P p = get(pClass);
+        if (!p.isCleared()) {
+            IView attachedView = p.getAttachedView();
+            if (attachedView == null) {
+                p.attachView(view);
+                final MLifecycle mLifecycle = view.getMLifecycle();
+                mLifecycle.registerObserver(new MLifecycle.Observer() {
+                    @Override
+                    public void onCreate() {
+
+                    }
+
+                    @Override
+                    public void onStart() {
+
+                    }
+
+                    @Override
+                    public void onResume() {
+
+                    }
+
+                    @Override
+                    public void onPause() {
+
+                    }
+
+                    @Override
+                    public void onStop() {
+
+                    }
+
+                    @Override
+                    public void onDestroy() {
+                        p.detachView();
+                        mLifecycle.unregisterObserver(this);
+                    }
+                });
+            }
+        }
+
+        return p;
+    }
 }

@@ -9,12 +9,14 @@ import android.util.Log;
 import android.view.View;
 
 import com.zhangqiang.activitystart.ActivityStartHelper;
+import com.zhangqiang.lifecycle.MLifecycle;
+import com.zhangqiang.lifecycle.MLifecycleProvider;
 import com.zhangqiang.mvp.Presenter;
 import com.zhangqiang.mvp.PresenterProviders;
 import com.zhangqiang.mvp.IView;
 import com.zhangqiang.permissionrequest.PermissionRequestHelper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IView{
 
 
     @Override
@@ -24,10 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         for (int i = 0; i < 1000; i++) {
-            PresenterA presenterA = PresenterProviders.of(this).get(PresenterA.class);
-            presenterA.attachView(new ViewA());
-            ViewA view1 = presenterA.getAttachedView();
-            Log.i("Test", i+"========" + presenterA.hashCode() + "=======" + view1.hashCode());
+            PresenterA presenterA = PresenterProviders.of(this).get(PresenterA.class,this);
+            IView view1 = presenterA.getAttachedView();
+//            Log.i("Test", i+"========" + presenterA.hashCode() + "=======" + view1.hashCode());
         }
 
 //        testPermissionRequest();
@@ -75,15 +76,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    public static class ViewA implements IView {
-
+    @Override
+    public MLifecycle getMLifecycle() {
+        return MLifecycleProvider.get(this);
     }
 
-    private static class PresenterA extends Presenter<ViewA> {
+
+    private static class PresenterA extends Presenter<IView> {
 
 
         public PresenterA() {
+        }
+
+        @Override
+        protected void onViewDetached(@NonNull IView view) {
+            super.onViewDetached(view);
+            Log.i("Test","=======onViewDetached======");
+        }
+
+        @Override
+        protected void onViewAttached(@NonNull IView view) {
+            super.onViewAttached(view);
+            Log.i("Test","=====onViewAttached========");
         }
     }
 }

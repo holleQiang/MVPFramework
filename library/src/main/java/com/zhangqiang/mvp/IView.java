@@ -1,6 +1,8 @@
 package com.zhangqiang.mvp;
 
-public interface IView {
+import com.zhangqiang.lifecycle.MLifecycleOwner;
+
+public interface IView extends MLifecycleOwner {
 
 
 }

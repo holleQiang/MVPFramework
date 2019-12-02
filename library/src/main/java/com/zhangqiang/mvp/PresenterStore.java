@@ -6,26 +6,24 @@ import java.util.Map;
 
 class PresenterStore {
 
-    private final Map<String, Presenter> presenters = new HashMap<>();
+    private final Map<String, BackgroundPresenter> presenters = new HashMap<>();
 
 
-    void put(String key, Presenter presenter) {
-        Presenter oldPresenter = presenters.put(key, presenter);
-        if (oldPresenter != null) {
-            oldPresenter.detachView();
+    void put(String key, BackgroundPresenter backgroundPresenter) {
+        BackgroundPresenter oldBackgroundPresenter = presenters.put(key, backgroundPresenter);
+        if (oldBackgroundPresenter != null) {
+            oldBackgroundPresenter.onClear();
         }
     }
 
-    Presenter get(String key) {
+    BackgroundPresenter get(String key) {
         return presenters.get(key);
     }
 
 
     void clear() {
-        for (Presenter presenter : presenters.values()) {
-            if (presenter != null) {
-                presenter.detachView();
-            }
+        for (BackgroundPresenter backgroundPresenter : presenters.values()) {
+            backgroundPresenter.onClear();
         }
         presenters.clear();
     }

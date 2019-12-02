@@ -8,8 +8,7 @@ import com.zhangqiang.holderfragment.SimpleLifecycleCallback;
 
 class PresenterStores {
 
-    private static final String TAG_KEY_PRESENTER_STORE = "tag_key_presenter_store" + PresenterStores.class;
-    private static final String TAG_KEY_LIFECYCLE_CALLBACK = "tag_key_lifecycle";
+    private static final String TAG_KEY_PRESENTER_STORE = "tag_presenter_store_com.zhangqiang.mvp.PresenterStores";
 
     static PresenterStore ofActivity(FragmentActivity activity){
         return getFromHolderFragment(HolderFragment.forActivity(activity));
@@ -21,29 +20,21 @@ class PresenterStores {
 
     private static PresenterStore getFromHolderFragment(final HolderFragment holderFragment){
 
-        Object tagLifecycle = holderFragment.getTag(TAG_KEY_LIFECYCLE_CALLBACK);
-        if (tagLifecycle == null) {
-            HolderFragment.LifecycleCallback lifecycleCallback = new SimpleLifecycleCallback(){
-                @Override
-                public void onDestroy() {
-                    super.onDestroy();
-                    holderFragment.unregisterLifecycleCallback(this);
-                    holderFragment.setTag(TAG_KEY_LIFECYCLE_CALLBACK,null);
-                    Object tag = holderFragment.getTag(TAG_KEY_PRESENTER_STORE);
-                    if (tag instanceof PresenterStore) {
-                        ((PresenterStore) tag).clear();
-                    }
-                }
-            };
-            holderFragment.registerLifecycleCallback(lifecycleCallback);
-            tagLifecycle = lifecycleCallback;
-            holderFragment.setTag(TAG_KEY_LIFECYCLE_CALLBACK,tagLifecycle);
-        }
         Object tag = holderFragment.getTag(TAG_KEY_PRESENTER_STORE);
         PresenterStore presenterStore;
         if (tag == null) {
             tag =  presenterStore = new PresenterStore();
             holderFragment.setTag(TAG_KEY_PRESENTER_STORE,tag);
+            holderFragment.registerLifecycleCallback(new SimpleLifecycleCallback(){
+                @Override
+                public void onDestroy() {
+                    super.onDestroy();
+                    Object tag = holderFragment.getTag(TAG_KEY_PRESENTER_STORE);
+                    if (tag instanceof PresenterStore) {
+                        ((PresenterStore) tag).clear();
+                    }
+                }
+            });
         }else if(tag instanceof PresenterStore){
             presenterStore = (PresenterStore) tag;
         }else {
