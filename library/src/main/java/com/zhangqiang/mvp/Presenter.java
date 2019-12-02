@@ -15,14 +15,17 @@ public class Presenter<V extends IView> extends BackgroundPresenter {
     }
 
     public final void attachView(V view) {
-        if (mAttachedView != null && mAttachedView != view) {
-            detachView();
-        }
         if (view == null) {
             throw new IllegalArgumentException("cannot attach a null view");
         }
-        mAttachedView = view;
-        onViewAttached(view);
+        final V oldView = mAttachedView;
+        if (oldView != null && oldView != view) {
+            detachView();
+        }
+        if (oldView == null || oldView != view) {
+            mAttachedView = view;
+            onViewAttached(view);
+        }
     }
 
     protected void onViewAttached(@NonNull V view) {
@@ -30,9 +33,11 @@ public class Presenter<V extends IView> extends BackgroundPresenter {
     }
 
     public final void detachView() {
-        final V detachedView = mAttachedView;
-        mAttachedView = null;
-        onViewDetached(detachedView);
+        if (mAttachedView != null) {
+            final V detachedView = mAttachedView;
+            mAttachedView = null;
+            onViewDetached(detachedView);
+        }
     }
 
 

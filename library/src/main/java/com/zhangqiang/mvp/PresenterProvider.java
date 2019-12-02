@@ -68,46 +68,46 @@ public class PresenterProvider {
     public <V extends IView, P extends Presenter> P get(Class<P> pClass, final V view) {
 
         final P p = get(pClass);
-        if (!p.isCleared()) {
-            IView attachedView = p.getAttachedView();
-            if (attachedView == null) {
-                p.attachView(view);
-                final MLifecycle mLifecycle = view.getMLifecycle();
-                mLifecycle.registerObserver(new MLifecycle.Observer() {
-                    @Override
-                    public void onCreate() {
-
-                    }
-
-                    @Override
-                    public void onStart() {
-
-                    }
-
-                    @Override
-                    public void onResume() {
-
-                    }
-
-                    @Override
-                    public void onPause() {
-
-                    }
-
-                    @Override
-                    public void onStop() {
-
-                    }
-
-                    @Override
-                    public void onDestroy() {
-                        p.detachView();
-                        mLifecycle.unregisterObserver(this);
-                    }
-                });
-            }
+        if (p.isCleared()) {
+            return p;
         }
+        IView attachedView = p.getAttachedView();
+        if (attachedView == null || attachedView != view) {
+            p.attachView(view);
+            final MLifecycle mLifecycle = view.getMLifecycle();
+            mLifecycle.registerObserver(new MLifecycle.Observer() {
+                @Override
+                public void onCreate() {
 
+                }
+
+                @Override
+                public void onStart() {
+
+                }
+
+                @Override
+                public void onResume() {
+
+                }
+
+                @Override
+                public void onPause() {
+
+                }
+
+                @Override
+                public void onStop() {
+
+                }
+
+                @Override
+                public void onDestroy() {
+                    p.detachView();
+                    mLifecycle.unregisterObserver(this);
+                }
+            });
+        }
         return p;
     }
 }

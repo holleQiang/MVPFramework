@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.tencent.qqmusic">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <permission android:name="com.tencent.qqmusic.permission.MM_MESSAGE" android:protectionLevel="signature"/>
+    <permission android:name="com.tencent.qqmusic.permission.MMOAUTH_CALLBACK" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.tencent.qqmusic.permission.MMOAUTH_CALLBACK"/>
+    <uses-permission android:name="com.tencent.qqmusic.permission.MM_MESSAGE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <permission android:name="android.permission.BROADCAST_STICKY" android:protectionLevel="signature"/>
+    <permission android:name="com.tencent.qqmusic.permission.SEND_BROADCAST_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.tencent.qqmusic.permission.SEND_BROADCAST_PERMISSION"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.qqmusic.qqcbdm"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <permission android:name="com.tencent.qqmusic.theme.permission" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.tencent.qqmusic.theme.permission"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <permission android:name="com.tencent.qqmusic.permission.MIPUSH_RECEIVE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.tencent.qqmusic.permission.MIPUSH_RECEIVE"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture"/>
+    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture"/>
+    <uses-permission android:name="com.meizu.flyme.push.permission.RECEIVE"/>
+    <permission android:name="com.tencent.qqmusic.push.permission.MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.tencent.qqmusic.push.permission.MESSAGE"/>
+    <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.tencent.qqmusic.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.tencent.qqmusic.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE"/>
+    <application android:allowBackup="false" android:allowTaskReparenting="true" android:hardwareAccelerated="true" android:icon="@mipmap/b" android:label="@string/ca" android:largeHeap="true" android:name="com.tencent.qqmusic.MusicApplication" android:networkSecurityConfig="@xml/e" android:persistent="true" android:process="com.tencent.qqmusic" android:resizeableActivity="true" android:supportsRtl="true" android:taskAffinity="android.task.qqmusic" android:theme="@style/f9" android:usesCleartextTraffic="true">
+        <meta-data android:name="com.tencent.rdm.uuid" android:value="c4fac482-a8d8-4683-8049-e8113961433d"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <meta-data android:name="android.vendor.full_screen" android:value="true"/>
+        <meta-data android:name="notch.config" android:value="portrait|landscape"/>
+        <meta-data android:name="android.notch_support" android:value="true"/>
+        <meta-data android:name="QBSDKAppKey" android:value="G9EjWMOUJAPwQQ/oJ0uehLhh"/>
+        <meta-data android:name="APPKEY_DENGTA" android:value="0S200D3PKF1UFLJI"/>
+        <meta-data android:name="android.max_aspect" android:value="2.5"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.baseactivity.PermissionActivity" android:screenOrientation="portrait" android:theme="@style/ez"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.ShareAccountActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.welcome.WelcomeActivity" android:screenOrientation="portrait" android:theme="@style/f_" android:windowNoTitle="true" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.PostMomentActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.DynamicSplashActivity" android:process=":lite" android:screenOrientation="portrait" android:theme="@style/f9" android:windowNoTitle="true" android:windowSoftInputMode="adjustPan"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusiccommon.util.crash.SafeModeLaunchActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <action android:name="android.intent.action.ALL_APPS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.LiteWebViewActivity" android:process=":lite" android:screenOrientation="portrait" android:theme="@style/f9" android:windowNoTitle="true" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.BillInfoEditActivityNew" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.AppStarterActivity" android:screenOrientation="portrait" android:theme="@style/ez" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/g"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.player.optimized.PlayerActivity" android:screenOrientation="portrait" android:theme="@style/f0" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:launchMode="singleTop" android:name="com.tencent.qqmusic.fragment.morefeatures.FragmentContainerActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.WebViewActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.LandingPageWebViewActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.GDTLandingPageWebViewActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.fragment.mymusic.my.brand.BrandAdWebViewActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.tencent.qqmusic.activity.MVPlayerActivity" android:screenOrientation="portrait" android:theme="@style/f7" android:windowSoftInputMode="adjustUnspecified|stateUnspecified">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.MVGifShareActivity" android:screenOrientation="behind" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.MVSharePopupTempActivity" android:screenOrientation="behind" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.activity.EditMvListActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.activity.EditRadioListActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:name="com.tencent.qqmusic.activity.DTSInvalidActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.soundfx.SoundFxSettingActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:name="com.tencent.qqmusic.activity.soundfx.dts.DtsAccessorySelectActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden" android:excludeFromRecents="true" android:exported="false" android:name="com.tencent.qqmusic.activity.soundfx.supersound.SuperSoundEfxSettingActivity" android:screenOrientation="unspecified" android:windowSoftInputMode="adjustPan"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden" android:excludeFromRecents="true" android:exported="false" android:name="com.tencent.qqmusic.activity.soundfx.supersound.SuperSoundHeadphoneBrandActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden" android:excludeFromRecents="true" android:exported="false" android:name="com.tencent.qqmusic.activity.soundfx.supersound.SuperSoundHeadphoneActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:name="com.tencent.qqmusic.activity.soundfx.supersound.SuperSoundEffectSettingActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.DTSEqualizerActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.DTSEqualizerAdvancedActivity" android:screenOrientation="landscape" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.WeiXinShareSongListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:scheme="AndroidQQMusicLabel"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.MediaScannerActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.CheckScanResultListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.MediaScannerFilterActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.FolderFilterActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.CustomScanActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.EditSongListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.LocalEditSongListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.EditLocalDirListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingQualityAndDownloadActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingDownloadQualityActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingAuditionQualityActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.VideoAutoPlaySettingActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingOfflineQualityActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingQPlaySetActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingQPlayWatchSetActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingQPlaySetupActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingQPlaySetupProcessActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingQPlayAutoSetActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingDownloadPathActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.GroupMemberActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.VIPIntrodutionWebViewActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingHelpAndFeedbackActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingNetworkDiagnosisActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingLogDiagnosisActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.IdentifyingCodeActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingShakeSetActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingDebugSetServerActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SettingDebugStatisticsActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.LoginActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.tencent.qqmusic.wxapi.WXEntryActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.LoginProxyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.FetchQQUserActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.RecognizerActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusic.recognizer"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTask" android:name="com.tencent.qqmusic.recognize.RecognizeActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusic.recognizer"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:icon="@drawable/appwidget_recognizer" android:label="@string/bl8" android:name="com.tencent.qqmusic.activity.RecognizerShortCut" android:targetActivity="com.tencent.qqmusic.recognize.RecognizeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTask" android:name="com.tencent.qqmusic.recognizekt.RecognizeActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusic.recognizer"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:name="com.tencent.qqmusic.recognize.RecognizeHistoryActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusic.recognizer"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:name="com.tencent.qqmusic.recognizekt.RecognizeDeskHistoryActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.recognizekt.RecognizeGuideActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.playerpersonalized.PPlayerContainerActivity" android:screenOrientation="portrait" android:theme="@style/f0"/>
+        <activity android:icon="@drawable/parenting_shortcut_icon" android:label="@string/b4h" android:launchMode="singleTask" android:name="com.tencent.qqmusic.business.scene.ParentingShortcutActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.AddToMusicListActivityNew" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.RingToneCutActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.FolderAddSongActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.FolderAddSongSearchActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.FolderAddSongListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.tencent.qqmusic.business.lockscreennew.LockScreenActivity" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="android.task.qqmusiclock" android:theme="@style/f6">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.UpgradeSongQualityActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:name="com.tencent.qqmusic.activity.DownloadListSongHistoryActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:name="com.tencent.qqmusic.activity.DownloadPaidSongListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="false" android:launchMode="singleInstance" android:name="com.tencent.qqmusic.third.DispacherActivityForThird" android:screenOrientation="portrait" android:theme="@style/lw">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusic.forthird.activity.MY_MUSIC"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.APP_LIST"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.THEME_PAGE"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.RECOGNIZER"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PUSH"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PUSH_2"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PLAYER"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PLAYER2"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PUSH_HUAWEI"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PUSH_OPPO"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PUSH_VIVO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="androidqqmusic"/>
+                <data android:scheme="AndroidQQMusic"/>
+                <data android:scheme="qqmusic"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="file"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:mimeType="application/itunes"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="content"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:mimeType="application/itunes"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:hardwareAccelerated="false" android:launchMode="singleInstance" android:name="com.tencent.qqmusic.third.ActiveActivity" android:screenOrientation="portrait" android:theme="@style/lw">
+            <intent-filter>
+                <data android:scheme="qqmusicactive"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.tencent.qqmusic.activity.EditFolderDetailActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan|stateVisible">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.ImageCropActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.ImageViewActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tencent100497308"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.midas.proxyactivity.APMidasPayProxyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:name="com.tencent.midas.wx.APMidasWXPayActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.tencent.midas.qq.APMidasQQWalletActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="qwallet100497308"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.midas.jsbridge.APWebJSBridgeActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.landscape.activity.PicturePlayerActivity" android:resizeableActivity="false" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="false" android:name="com.tencent.qqmusicplayerprocess.servicenew.QQPlayerServiceNew" android:process=":QQPlayerService">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="false" android:name="com.tencent.qqmusicplayerprocess.qqmusicdlna.QPlayService" android:process=":QQPlayerService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.tencent.qqmusic.service.MainService">
+            <intent-filter android:priority="999">
+                <action android:name="com.tencent.qqmusic.service.IMainService"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.tencent.qqmusic.fragment.message.chat.ImChatService"/>
+        <receiver android:name="android.support.v4.media.session.MediaButtonReceiver" android:process=":QQPlayerService">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/cg3" android:name="com.tencent.qqmusiccommon.WidgetProviderSmall">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/c"/>
+        </receiver>
+        <receiver android:label="@string/cg2" android:name="com.tencent.qqmusiccommon.WidgetProviderMiddle">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/b"/>
+        </receiver>
+        <receiver android:label="@string/cg1" android:name="com.tencent.qqmusiccommon.WidgetProviderLarge">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/a"/>
+        </receiver>
+        <receiver android:name="com.tencent.qqmusic.BootBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.tencent.qqmusic.ShutdownBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.tencent.qqmusic.business.musicalarm.AlarmDemoReceiver">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusic.alarm"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.tencent.qqmusic.third.QQMusicServiceForThird" android:process=":remote">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusic.third.IQQMusicServiceForThird"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="true" android:name="com.tencent.qqmusic.third.api.QQMusicApiService" android:process=":QQPlayerService">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusic.third.api.QQMusicApiService"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="false" android:name="com.tencent.tmassistantsdk.downloadservice.TMAssistantDownloadSDKService" android:process=":TMAssistantDownloadSDKService"/>
+        <receiver android:exported="false" android:name="com.tencent.qqmusic.third.BroadcastReceiverCenterForThird">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusic.forthird.activity.APP_LIST"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.THEME_PAGE"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.RECOGNIZER"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PUSH"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PUSH_2"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PLAYER"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PLAYER2"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.THEME_DETAIL"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.RADIO_PAGE"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.RANK_PAGE"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.NEW_SONG_PAGE"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.SINGLE_NEW_SONG"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.SINGER_PAGE"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.ALBUM_PAGE"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.HTML_PAGE"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.BILL"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PROFILE"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.MVPLAYER"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.MV_THEME"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.MV_THEME_DETAIL"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.ASSORT_LIST"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.ASSORT_FRAGMENT"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.SKIN_THEME_DETAIL"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.DAILY_RC_DETAIL"/>
+                <action android:name="com.tencent.qqmusic.forthird.activity.PC_WIFI_IMPORT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.tencent.qqmusic.business.local.MediaScannReceiver">
+            <intent-filter>
+                <action android:name="com.tencent.qqpimsecure.ACTION_MEDIA_CACHE_CHANGE"/>
+                <action android:name="com.tencent.qqmusic.ACTION_GOTO_LOCAL"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.tencent.qqmusic.business.unicom.TrafficStatisticsService" android:process=":QQPlayerService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.tencent.qqmusic.common.ipc.MusicIPCService" android:process=":QQPlayerService"/>
+        <service android:name="com.tencent.iot.earphone.blelib.library.BluetoothService"/>
+        <service android:name="com.tencent.iot.earphone.beacon.BeaconService"/>
+        <service android:name="com.tencent.xiaowei.sdk.XWCoreService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.GeneOperationActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.LyricSearchActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.InputActivity" android:theme="@style/f3" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.live.ui.view.LiveInputActivity" android:theme="@style/f3" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.ImShareSendDialogActivity" android:theme="@style/ey" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.DanmuCommentActivity" android:theme="@style/f3" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.DanmuGiftShopActivity" android:theme="@style/f3" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.DanmuGiftNumInputActivity" android:theme="@style/f3" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.EditFolderListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.DownloadLyricAndAlbumActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.cloudlocalmusic.CloudLocalMusicListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleInstance" android:name="com.tencent.qqmusic.business.lyricnew.desklyric.DeskHomeDialogActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:enabled="true" android:exported="false" android:name="com.tencent.qqmusicplayerprocess.qplayauto.QPlayAutoService" android:process=":QQPlayerService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleInstance" android:name="com.tencent.qqmusic.activity.QPlayAutoLockScreenActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.activity.ShareActivity" android:theme="@style/ex" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.activity.ShareFeedActivity" android:theme="@style/ex" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.lyricposter.LyricPosterActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.lyricposter.LyricPosterRecommendActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.CountryCodeSettingActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.IPCCheckActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.NetworkCheckActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusiccommon.util.crash.SafeModeCheckActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.recognizekt.RecognizeTestActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.recognizekt.RecognizeSelectActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <service android:enabled="true" android:exported="false" android:name="com.tencent.wns.service.WnsMain">
+            <intent-filter>
+                <action android:name="com.tencent.wns.service.WnsMain"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.tencent.base.os.clock.AlarmClockReceiver">
+            <intent-filter>
+                <action android:name="wns.heartbeat"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.tencent.tmdownloader.TMAssistantDownloadService" android:process=":TMAssistantDownloadSDKService"/>
+        <service android:exported="false" android:name="com.tencent.qqmusic.tinker.service.MusicTinkerResultService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.FordLockScreenActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.FreeWifiActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="com.tencent.qqmusic.musicdbaccessor.MusicDbContentProvider" android:exported="false" android:name="com.tencent.qqmusic.common.providers.MusicDbContentProvider"/>
+        <provider android:authorities="com.tencent.qqmusic.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/f"/>
+        </provider>
+        <provider android:authorities="com.tencent.qqmusic.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="com.tencent.qqmusic.business.splash.thirdpartsplash.gdt.GDTFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/d"/>
+        </provider>
+        <service android:name="jackpal.androidterm.TermService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTask" android:name="jackpal.androidterm.Term" android:windowSoftInputMode="stateAlwaysVisible|adjustResize">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.SuperSoundSettingActivity" android:screenOrientation="portrait" android:theme="@style/f9">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.ShowImageActivity" android:screenOrientation="portrait" android:theme="@style/fy"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.business.live.ui.LiveCreateActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.business.live.ui.LiveAnchorActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.business.live.scene.view.activity.FanLiveAnchorActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.business.live.scene.view.activity.AnnouncementEditActivity" android:theme="@style/f3" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.business.live.scene.view.activity.InputLiveActivity" android:theme="@style/f3" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.business.live.scene.view.activity.LiveSearchRankActivity" android:screenOrientation="portrait" android:theme="@style/m5" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.live.ui.LiveTestActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.live.ui.LiveAnimTestActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.performance.anr.TestANRActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.customskin.TestCustomSkinActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.ui.skin.preview.PreviewTestActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.customskin.view.CustomSkinActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.customskin.view.CustomColorActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.live.ui.LiveGiftListActivity" android:screenOrientation="portrait" android:theme="@style/f3" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.live.ui.LiveSelectFolderListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.live.ui.LiveSelectSongListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.live.ui.LiveSelectSearchActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.live.ui.LiveForbidListActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.live.ui.HalfScreenWebViewActivity" android:screenOrientation="portrait" android:theme="@style/f5" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.business.replay.ui.ReplayActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.RunningRadioActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.ImShareActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.tencent.qqmusic.business.live.stream.StreamLiveActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.business.live.ui.LandscapeShareActivity" android:screenOrientation="landscape" android:theme="@style/f4" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.PushInfoActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:exported="false" android:name="oicq.wlogin_sdk.quicklogin.QuickLoginWebViewActivity" android:screenOrientation="portrait" android:theme="@style/fa"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.activity.SettingLiveDiagnosisActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.business.live.ui.LiveScreenCaptureShareActivity" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.activity.cloudlocalmusic.CloudLocalDeviceActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.business.live.ui.MvShareTestActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.videoposter.VideoPosterActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.videoposter.LyricPosterSelectActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.videoposter.VideoRecommendActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.videoposter.VideoPosterSaveVideoActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.musicdisk.ui.UploadManageActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.musicdisk.ui.UploadLocalSongListActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleInstance" android:name="com.tencent.qqmusic.activity.LoginDialogActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.camerascan.view.CameraScanActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.camerascan.view.CameraScanImgResultActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.camerascan.view.CameraScanOuterUrlResultActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.camerascan.view.CameraScanARResultActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tencent.tads.splash.AdLandingPageActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.DebugNetStateActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.FeedsIjkVideoActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.tencent.qqmusic.activity.QQMusicGalleryActivity" android:theme="@style/f1"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.arvideo.record.ARRecordActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.arvideo.save.ARVideoSaveActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.business.live.ui.LiveContainerActivity" android:screenOrientation="portrait" android:theme="@style/ef" android:windowSoftInputMode="adjustPan"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.camerascan.view.CameraScanADActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.activity.CaseIdActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustNothing|stateAlwaysVisible"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.scanguide.ScanGuideActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.scanguide.ScanGuideDetailsActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.scanguide.ScanGuideShowBigImageActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:label="@string/c7u" android:name="com.tencent.qqmusic.activity.soundfx.supersound.debug.SuperSoundDebugActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Material"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.activity.soundfx.supersound.SuperSoundSingerEffectListActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.activity.NetPacketCaptureActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.activity.ShareHeaderActivity" android:screenOrientation="portrait" android:theme="@style/ex"/>
+        <activity android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.DexActivity" android:process=":nodex" android:screenOrientation="portrait" android:theme="@style/ez"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.activity.ShareToTargetActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:launchMode="standard" android:name="com.tencent.qqmusic.activity.base.FragmentActivityWithMinibar" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.tencent.ads.canvasad.AdCanvasActivity" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.tencent.qqmusic.activity.SettingDebugWebApiLogActivity" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.MLDebugActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.RunningRadioDebugActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.tencent.qqmusic.activity.LoginSecureVerificationWebViewActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.tencent.qqmusiccommon.PLAYLIST_VIEWER.PHONE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.camerascan.share.ShareCommentActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="false" android:name="com.tencent.qqmusic.camerascan.share.SharePicSetActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.tencent.qqmusic.activity.JumpToFragmentTestActivity" android:screenOrientation="portrait" android:theme="@style/f9" android:windowSoftInputMode="adjustPan"/>
+        <receiver android:exported="false" android:name="com.tencent.qqmusic.OverInstallDexInjectReceiver" android:process=":dexinstall">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.tencent.qqmusicplayerprocess.daemon.DaemonService"/>
+        <meta-data android:name="MIUI_APP_ID" android:value="s2882303761517135981"/>
+        <meta-data android:name="MIUI_APP_KEY" android:value="s5671713524981"/>
+        <meta-data android:name="OPPO_APP_ID" android:value="83tweFDz0CCGCGO0Wg48g0S04"/>
+        <meta-data android:name="OPPO_APP_KEY" android:value="6C7e134dF61D7fb356F7Ff9259D0187a"/>
+        <meta-data android:name="com.vivo.push.api_key" android:value="dcfc640c-6035-4c35-99b9-39b6ff42b645"/>
+        <meta-data android:name="com.vivo.push.app_id" android:value="10298"/>
+        <receiver android:name="com.tencent.component.thirdpartypush.huaweipush.HuaweiPushRevicer" android:permission="com.tencent.qqmusic.permission.PROCESS_PUSH_MSG">
+            <intent-filter>
+                <action android:name="com.huawei.android.push.intent.REGISTRATION"/>
+                <action android:name="com.huawei.android.push.intent.RECEIVE"/>
+                <action android:name="com.huawei.intent.action.PUSH_DELAY_NOTIFY"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.tencent.qqmusic.hms.update.provider" android:exported="false" android:grantUriPermissions="true" android:name="com.huawei.hms.update.provider.UpdateProvider" android:process=":updateProvider"/>
+        <provider android:authorities="com.tencent.qqmusic.updateSdk.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="com.huawei.updatesdk.fileprovider.UpdateSdkFileProvider"/>
+        <activity android:configChanges="fontScale|layoutDirection|locale|orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:hardwareAccelerated="true" android:name="com.huawei.hms.activity.BridgeActivity" android:theme="@android:style/Theme.Translucent">
+            <meta-data android:name="hwc-theme" android:value="androidhwext:style/Theme.Emui.Translucent"/>
+        </activity>
+        <meta-data android:name="com.huawei.hms.client.appid" android:value="appid=10220136"/>
+        <meta-data android:name="com.huawei.hms.version" android:value="2.6.3"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:label="@string/c7v" android:launchMode="singleTask" android:name="com.tencent.qqmusic.activity.VerifyActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.tencent.qqmusic.business.push.PushBroadcastReceiver">
+            <intent-filter>
+                <action android:name="wns.push.to.com.tencent.qqmusic"/>
+                <action android:name="third.party.push.to.com.tencent.qqmusic"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:multiprocess="true" android:name="com.qq.e.comm.DownloadService"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.qq.e.ads.ADActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.qq.e.ads.PortraitADActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.qq.e.ads.LandscapeADActivity" android:screenOrientation="landscape"/>
+        <activity android:name="com.tencent.picker.activity.PictureSelectorActivity" android:screenOrientation="portrait"/>
+        <provider android:authorities="com.tencent.qqmusic.lifecycle-trojan" android:exported="false" android:multiprocess="true" android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"/>
+        <service android:enabled="true" android:name="com.xiaomi.push.service.XMPushService" android:process=":pushservice"/>
+        <service android:enabled="true" android:exported="false" android:name="com.xiaomi.push.service.XMJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":pushservice"/>
+        <service android:enabled="true" android:exported="true" android:name="com.xiaomi.mipush.sdk.PushMessageHandler"/>
+        <service android:enabled="true" android:exported="false" android:name="com.xiaomi.mipush.sdk.MessageHandleService"/>
+        <receiver android:exported="true" android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.xiaomi.push.service.receivers.PingReceiver" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.xiaomi.push.PING_TIMER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.tencent.component.thirdpartypush.mipush.MiPushReceiver">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="fontScale|layoutDirection|locale|orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:hardwareAccelerated="true" android:name="com.huawei.android.hms.agent.common.HMSAgentActivity" android:theme="@android:style/Theme.Translucent">
+            <meta-data android:name="hwc-theme" android:value="androidhwext:style/Theme.Emui.Translucent"/>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:exported="false" android:name="com.huawei.updatesdk.service.otaupdate.AppUpdateActivity" android:theme="@style/upsdkDlDialog">
+            <meta-data android:name="hwc-theme" android:value="androidhwext:style/Theme.Emui.Translucent.NoTitleBar"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.huawei.updatesdk.support.pm.PackageInstallerActivity" android:theme="@style/upsdkDlDialog">
+            <meta-data android:name="hwc-theme" android:value="androidhwext:style/Theme.Emui.Translucent"/>
+        </activity>
+        <service android:enabled="true" android:exported="true" android:name="com.huawei.hms.support.api.push.service.HmsMsgService" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.huawei.push.msg.NOTIFY_MSG"/>
+                <action android:name="com.huawei.push.msg.PASSBY_MSG"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.huawei.updatesdk.service.deamon.download.DownloadService"/>
+        <service android:name="com.coloros.mcssdk.PushService" android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE">
+            <intent-filter>
+                <action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.vivo.push.sdk.service.CommandClientService"/>
+        <activity android:exported="false" android:name="com.vivo.push.sdk.LinkProxyClientActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:name="com.tencent.component.thirdpartypush.vivo.VivoPushReceiver">
+            <intent-filter>
+                <action android:name="com.vivo.pushclient.action.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.tencent.component.thirdpartypush.meizu.MeizuPushReceiver">
+            <intent-filter>
+                <action android:name="com.meizu.flyme.push.intent.MESSAGE"/>
+                <action android:name="com.meizu.flyme.push.intent.REGISTER.FEEDBACK"/>
+                <action android:name="com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK"/>
+                <action android:name="com.meizu.c2dm.intent.REGISTRATION"/>
+                <action android:name="com.meizu.c2dm.intent.RECEIVE"/>
+                <category android:name="com.tencent.qqmusic"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.tencent.iot.earphone.SppConnActivity" android:process=":virtualdevice" android:screenOrientation="portrait" android:theme="@style/dt"/>
+        <service android:enabled="true" android:exported="false" android:name="com.tencent.tinker.lib.service.TinkerPatchForeService" android:process=":patch"/>
+        <service android:exported="false" android:name="com.tencent.tinker.lib.service.TinkerPatchService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":patch"/>
+        <service android:exported="false" android:name="com.tencent.tinker.lib.service.TinkerPatchService$InnerService" android:process=":patch"/>
+        <service android:exported="false" android:name="com.tencent.tinker.lib.service.DefaultTinkerResultService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.sina.weibo.sdk.share.WbShareResultActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_STORY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.sina.weibo.sdk.share.WbShareTransActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.sina.weibo.sdk.share.WbShareToStoryActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.qq.e.ads.RewardvideoPortraitADActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.qq.e.ads.RewardvideoLandscapeADActivity" android:theme="@android:style/Theme.Translucent"/>
+        <service android:exported="true" android:name="com.meizu.cloud.pushsdk.NotificationService"/>
+        <receiver android:exported="false" android:name="com.meizu.cloud.pushsdk.SystemReceiver">
+            <intent-filter>
+                <action android:name="com.meizu.cloud.pushservice.action.PUSH_SERVICE_START"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_00"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_01"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_02"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_03"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_04"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_05"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_06"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_07"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_08"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_09"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_00_T" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_01_T" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$STDStub_02_T" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_00"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_01"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_02"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_03"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_04"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_05"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_06"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_07"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_08"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_09"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_00_T" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_01_T" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:launchMode="singleTop" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTStub_02_T" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_00"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_01"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_02"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_03"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_04"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_05"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_06"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_07"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_08"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_09"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_00_T" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_01_T" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SGTKStub_02_T" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_00"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_01"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_02"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_03"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_04"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_05"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_06"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_07"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_08"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_09"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_00_T" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_01_T" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:launchMode="singleInstance" android:name="com.tencent.tinker.loader.hotplug.ActivityStubs$SIStub_02_T" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="tinker_version" android:value="1.9.14"/>
+        <meta-data android:name="TINKER_ID" android:value="tinker_id_qqmusic_9.6.0.9.rebfc55c8"/>
+    </application>
+</manifest>

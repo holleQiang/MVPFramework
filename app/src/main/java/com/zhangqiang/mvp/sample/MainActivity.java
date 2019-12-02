@@ -26,7 +26,12 @@ public class MainActivity extends AppCompatActivity implements IView{
 
 
         for (int i = 0; i < 1000; i++) {
-            PresenterA presenterA = PresenterProviders.of(this).get(PresenterA.class,this);
+            PresenterA presenterA = PresenterProviders.of(this).get(PresenterA.class, new IView() {
+                @Override
+                public MLifecycle getMLifecycle() {
+                    return MainActivity.this.getMLifecycle();
+                }
+            });
             IView view1 = presenterA.getAttachedView();
 //            Log.i("Test", i+"========" + presenterA.hashCode() + "=======" + view1.hashCode());
         }
@@ -91,13 +96,13 @@ public class MainActivity extends AppCompatActivity implements IView{
         @Override
         protected void onViewDetached(@NonNull IView view) {
             super.onViewDetached(view);
-            Log.i("Test","=======onViewDetached======");
+            Log.i("Test","=======onViewDetached======"+view);
         }
 
         @Override
         protected void onViewAttached(@NonNull IView view) {
             super.onViewAttached(view);
-            Log.i("Test","=====onViewAttached========");
+            Log.i("Test","=====onViewAttached========"+view);
         }
     }
 }
