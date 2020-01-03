@@ -1,23 +1,34 @@
 package com.zhangqiang.mvp.sample;
 
 import android.Manifest;
+import android.arch.lifecycle.Lifecycle;
+import android.arch.lifecycle.LifecycleOwner;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 import com.zhangqiang.activitystart.ActivityStartHelper;
-import com.zhangqiang.lifecycle.MLifecycle;
-import com.zhangqiang.lifecycle.MLifecycleProvider;
+import com.zhangqiang.mvp.Destroyable;
+import com.zhangqiang.mvp.DestroyableOwner;
+import com.zhangqiang.mvp.IView;
 import com.zhangqiang.mvp.Presenter;
 import com.zhangqiang.mvp.PresenterProviders;
-import com.zhangqiang.mvp.IView;
 import com.zhangqiang.permissionrequest.PermissionRequestHelper;
 
-public class MainActivity extends AppCompatActivity implements IView{
+import java.util.ArrayList;
+import java.util.List;
 
+public class MainActivity extends AppCompatActivity implements IView {
+
+    private Destroyable destroyable = new Destroyable() {
+        @Override
+        public boolean isDestroyed() {
+            return isFinishing();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +37,9 @@ public class MainActivity extends AppCompatActivity implements IView{
 
 
         for (int i = 0; i < 1000; i++) {
-            PresenterA presenterA = PresenterProviders.of(this).get(PresenterA.class, new IView() {
-                @Override
-                public MLifecycle getMLifecycle() {
-                    return MainActivity.this.getMLifecycle();
-                }
-            });
+            PresenterA presenterA = PresenterProviders.of(this).get2(PresenterA.class, new TestView());
             IView view1 = presenterA.getAttachedView();
-//            Log.i("Test", i+"========" + presenterA.hashCode() + "=======" + view1.hashCode());
+            Log.i("Test", i+"========" + presenterA.hashCode() + "=======" + view1.hashCode());
         }
 
 //        testPermissionRequest();
@@ -81,10 +87,6 @@ public class MainActivity extends AppCompatActivity implements IView{
 
     }
 
-    @Override
-    public MLifecycle getMLifecycle() {
-        return MLifecycleProvider.get(this);
-    }
 
 
     private static class PresenterA extends Presenter<IView> {
@@ -104,5 +106,32 @@ public class MainActivity extends AppCompatActivity implements IView{
             super.onViewAttached(view);
             Log.i("Test","=====onViewAttached========"+view);
         }
+    }
+
+    public static void main(String[] args) {
+
+
+
+    }
+
+    class TestView implements IView, LifecycleOwner, DestroyableOwner {
+
+
+        @NonNull
+        @Override
+        public Lifecycle getLifecycle() {
+            return MainActivity.this.getLifecycle();
+        }
+
+        @Override
+        public Destroyable getDestroyable() {
+            return destroyable;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        destroyable.destroy();
     }
 }

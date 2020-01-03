@@ -4,26 +4,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-class PresenterStore {
+public class PresenterStore {
 
-    private final Map<String, BackgroundPresenter> presenters = new HashMap<>();
+    private final Map<String, Presenter> presenters = new HashMap<>();
 
-
-    void put(String key, BackgroundPresenter backgroundPresenter) {
-        BackgroundPresenter oldBackgroundPresenter = presenters.put(key, backgroundPresenter);
-        if (oldBackgroundPresenter != null) {
-            oldBackgroundPresenter.onClear();
+    public void put(String key, Presenter backgroundPresenter) {
+        Presenter oldPresenter = presenters.put(key, backgroundPresenter);
+        if (oldPresenter != null) {
+            oldPresenter.onClear();
         }
     }
 
-    BackgroundPresenter get(String key) {
+    public Presenter get(String key) {
         return presenters.get(key);
     }
 
 
-    void clear() {
-        for (BackgroundPresenter backgroundPresenter : presenters.values()) {
-            backgroundPresenter.onClear();
+    public void clear() {
+        for (Presenter presenter : presenters.values()) {
+            presenter.onClear();
         }
         presenters.clear();
     }

@@ -17,5 +17,9 @@ public class PresenterProviders {
     }
 
 
+    public static PresenterProvider of(PresenterStore presenterStore) {
+        return new PresenterProvider(presenterStore);
+    }
+
 
 }
