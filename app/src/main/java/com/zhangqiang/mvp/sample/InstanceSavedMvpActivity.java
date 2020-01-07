@@ -20,7 +20,7 @@ public class InstanceSavedMvpActivity extends AppCompatActivity implements MVPTe
             @Override
             public void onClick(final View v) {
 
-                PresenterProviders.of(InstanceSavedMvpActivity.this).get(MVPTestPresenter.class).sendRequest();
+                PresenterProviders.of(InstanceSavedMvpActivity.this).get(MVPTestPresenter.class,InstanceSavedMvpActivity.this).sendRequest();
             }
         });
         tvResult = findViewById(R.id.tv_result);
