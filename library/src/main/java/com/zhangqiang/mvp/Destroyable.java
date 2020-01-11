@@ -7,11 +7,6 @@ public abstract class Destroyable {
 
     private final List<OnDestroyListener> onDestroyListeners = new ArrayList<>();
 
-    interface OnDestroyListener {
-
-        void onDestroy();
-    }
-
     public abstract boolean isDestroyed();
 
     public void addOnDestroyListener(OnDestroyListener onDestroyListener) {

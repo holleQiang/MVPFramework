@@ -14,7 +14,7 @@ import java.util.Map;
 public class PresenterProvider {
 
     private static final Map<LifecycleOwner, LifecycleObserver> mLifecycleMap = new HashMap<>();
-    private static final Map<DestroyableOwner, Destroyable.OnDestroyListener> mDestroyableMap = new HashMap<>();
+    private static final Map<DestroyableOwner, OnDestroyListener> mDestroyableMap = new HashMap<>();
 
     private final PresenterStore mPresenterStore;
 
@@ -126,13 +126,13 @@ public class PresenterProvider {
         if (attachedView == null || attachedView != view) {
             if (attachedView instanceof DestroyableOwner) {
                 DestroyableOwner destroyableOwner = (DestroyableOwner) attachedView;
-                Destroyable.OnDestroyListener destroyListener = mDestroyableMap.get(destroyableOwner);
+                OnDestroyListener destroyListener = mDestroyableMap.get(destroyableOwner);
                 if (destroyListener != null) {
                     destroyableOwner.getDestroyable().removeOnDestroyListener(destroyListener);
                 }
             }
             p.attachView(view);
-            Destroyable.OnDestroyListener onDestroyListener = new Destroyable.OnDestroyListener() {
+            OnDestroyListener onDestroyListener = new OnDestroyListener() {
                 @Override
                 public void onDestroy() {
                     p.detachView();
